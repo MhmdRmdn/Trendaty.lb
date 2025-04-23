@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electric Pump - Trendaty</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .navbar {
+      background-color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar img {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+    }
+
+    .product-wrapper {
+      margin-top: 160px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .product-image {
+      flex: 1 1 350px;
+      position: relative;
+    }
+
+    .product-image img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 20;
+    }
+
+    .slider-button.left {
+      left: 10px;
+    }
+
+    .slider-button.right {
+      right: 10px;
+    }
+
+    .product-details {
+      flex: 1 1 350px;
+    }
+
+    .product-details h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .product-details p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      color: #222;
+      margin-bottom: 1rem;
+    }
+
+    .buy-now-btn {
+      background-color: #ff6f61;
+      color: white;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .buy-now-btn:hover {
+      background-color: #ff3b2e;
+    }
+
+    .back-button-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .back-button {
+      padding: 0.7rem 1.5rem;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .back-button:hover {
+      background-color: #0f5bb5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <img src="images/logo2.jpeg" alt="Trendaty Logo">
+  </div>
+
+  <div class="product-wrapper">
+    <div class="product-image">
+      <img id="product-image" src="images/pump.jpg" alt="Electric Pump">
+      <button class="slider-button left" onclick="changeImage('prev')">←</button>
+      <button class="slider-button right" onclick="changeImage('next')">→</button>
+    </div>
+    <div class="product-details">
+      <h1>Electric Pump</h1>
+      <p>This efficient Electric Pump is perfect for inflating your pool toys, boats, and other inflatables in no time. Compact, portable, and easy to use, it makes inflating items quick and hassle-free.</p>
+      <p class="price">$29.99</p>
+      <!-- WhatsApp Button -->
+      <a href="https://wa.me/961767452810?text=I%20want%20to%20buy%20the%20Electric%20Pump" target="_blank">
+        <button class="buy-now-btn">Buy Now</button>
+      </a>
+    </div>
+  </div>
+
+  <div class="back-button-container">
+    <a href="homepage.html" class="back-button">Go Back to Homepage</a>
+  </div>
+
+  <script>
+    const images = [
+      'images/pump.jpg', 
+      'images/pump-2.jpg', 
+      'images/pump-3.jpg'
+    ];
+    let currentImageIndex = 0;
+
+    function changeImage(direction) {
+      if (direction === 'next') {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+      } else {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      }
+      document.getElementById('product-image').src = images[currentImageIndex];
+    }
+  </script>
+
+</body>
+</html>
