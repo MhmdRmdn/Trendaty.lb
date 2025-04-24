@@ -36,6 +36,19 @@
       object-fit: cover;
     }
 
+    /* Responsive fix for phone logo centering */
+    @media (max-width: 600px) {
+      .navbar {
+        justify-content: center !important;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .navbar img {
+        margin: 0 auto;
+      }
+    }
+
     /* Info Paragraph */
     .info-text {
       margin: 2rem 5%;
